@@ -28,7 +28,10 @@ class WordController extends Controller
 
         $word = Word::create($validated);
 
-        return response()->json($word);
+        return response()->json([
+            'message' => 'Word added successfully!',
+            'word' => $word
+        ], 201);
     }
 
 
