@@ -35,6 +35,7 @@ class WordController extends Controller
     }
 
 
+
     /**
      * Display the specified resource.
      */

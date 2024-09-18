@@ -2,31 +2,38 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule for forms
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { WordService } from '../services/word.service';
 
 @Component({
   selector: 'app-wordform',
   standalone: true,  // Standalone component
   templateUrl: './wordform.component.html', // Link to your HTML template
   styleUrls: ['./wordform.component.scss'], // Link to your styles
-  imports: [CommonModule, ReactiveFormsModule]  // Import ReactiveFormsModule and CommonModule
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule]  // Import HttpClientModule here
 })
 export class WordFormComponent {
   wordForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    // Initialize the form
+  constructor(private fb: FormBuilder, private wordService: WordService) {
     this.wordForm = this.fb.group({
-      nederlands: ['', Validators.required], // Dutch word
-      turkish: ['', Validators.required],    // Turkish meaning
-      english: ['', Validators.required],    // English meaning
-      sentence: ['', Validators.required]    // Example sentence
+      nederlands: ['', Validators.required],
+      turkish: ['', Validators.required],
+      english: ['', Validators.required],
+      sentence: ['', Validators.required]
     });
   }
 
-  // Function to handle form submission
   submitForm() {
     if (this.wordForm.valid) {
-      console.log('Form Data:', this.wordForm.value);
+      this.wordService.addWord(this.wordForm.value).subscribe(
+        (response: any) => {
+          console.log('Word added successfully', response);
+        },
+        (error: any) => {
+          console.error('Error adding word', error);
+        }
+      );
     }
   }
 }
