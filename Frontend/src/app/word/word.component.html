@@ -1,0 +1,23 @@
+<form [formGroup]="wordForm" (ngSubmit)="submitForm()" class="word-form-container">
+  <div class="form-group">
+    <label for="nederlands">Dutch (Nederlands)</label>
+    <input id="nederlands" formControlName="nederlands" type="text" placeholder="Enter the Dutch word" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="turkish">Turkish</label>
+    <input id="turkish" formControlName="turkish" type="text" placeholder="Enter the Turkish meaning" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="english">English</label>
+    <input id="english" formControlName="english" type="text" placeholder="Enter the English meaning" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="sentence">Example Sentence (in Dutch)</label>
+    <input id="sentence" formControlName="sentence" type="text" placeholder="Enter an example sentence in Dutch" required class="form-control">
+  </div>
+
+  <button type="submit" [disabled]="wordForm.invalid" class="submit-button">Add Word</button>
+</form>
