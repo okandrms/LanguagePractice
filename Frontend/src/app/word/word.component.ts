@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WordService } from '../services/word.service';
+import { LoginComponent } from "../login/login.component";
 
 @Component({
   selector: 'app-word',
   standalone: true,
   templateUrl: './word.component.html',
   styleUrls: ['./word.component.css'],
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule]
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, LoginComponent]
 })
 export class WordComponent {
   wordForm: FormGroup;

@@ -4,6 +4,7 @@ namespace App\Exports;
 
 use App\Models\Word;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Support\Facades\Auth;
 
 class WordExport implements FromCollection
 {
@@ -12,6 +13,6 @@ class WordExport implements FromCollection
     */
     public function collection()
     {
-        return Word::all();
+        return Word::where('user_id', Auth::id())->get();
     }
 }
