@@ -11,4 +11,8 @@ class Word extends Model
 
 
     protected $fillable = ['nederlands', 'turkish', 'english', 'sentence'];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

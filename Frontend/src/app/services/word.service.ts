@@ -31,7 +31,7 @@ export class WordService {
   }
 
   // Export (GET with Blob)
-  exportWords(): Observable<Blob> {
-    return this.http.get<Blob>(`${this.apiUrl}/export`, { responseType: 'blob' as 'json' });
+  exportWords() {
+    return this.http.get(`${this.apiUrl}/export/words`, { responseType: 'blob' });
   }
 }

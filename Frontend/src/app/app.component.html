@@ -1,3 +1,14 @@
+<ng-template *ngIf="isLoggedIn">
+  <app-navbar></app-navbar>
+</ng-template>
+
+<ng-template *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</ng-template>
+
+<router-outlet></router-outlet>
+
 <h1>{{ title }}</h1>
+
 <!-- Add the WordFormComponent here -->
 <app-wordform></app-wordform>
