@@ -1,4 +1,11 @@
-<form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+<div class="row" @If(!authService.isLoggedIn())></div>
+
+  <!-- Column for login form -->
+  <div class="col col-md-6 flex">
+      <h2>Login</h2>
+      <hr>
+
+<form [formGroup]="loginForm" >
   <div class="form-group">
     <label for="email">Email</label>
     <input id="email" formControlName="email" type="email" required class="form-control" placeholder="Enter your email">
@@ -11,4 +18,14 @@
 
   <button type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>
+
+<a routerLink="/register" class="btn btn-link mt-3">Create Account</a>
+
+      <!-- Forgot password link -->
+      <a routerLink="/forgotpassword" class="btn btn-link mt-3">Forgot password?</a>
+  </div>
+
+
+
+
 

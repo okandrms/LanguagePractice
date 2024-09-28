@@ -1,14 +1,10 @@
-<ng-template *ngIf="isLoggedIn">
-  <app-navbar></app-navbar>
-</ng-template>
 
-<ng-template *ngIf="!isLoggedIn">
-  <app-login></app-login>
-</ng-template>
+<app-login *ngIf="!isLoggedIn"></app-login>
 
-<router-outlet></router-outlet>
+<!-- Kullanıcı giriş yaptıysa yönlendirme yapılacak -->
+<router-outlet *ngIf="isLoggedIn"></router-outlet>
 
 <h1>{{ title }}</h1>
 
-<!-- Add the WordFormComponent here -->
-<app-wordform></app-wordform>
+<!-- WordFormComponent sadece giriş yapıldıysa gösterilsin -->
+<app-wordform *ngIf="isLoggedIn"></app-wordform>
