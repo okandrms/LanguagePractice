@@ -1,0 +1,115 @@
+
+
+
+/* Başlık Styling */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff5b5b;
+}
+
+/* Form container */
+.register-form-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Input styling */
+input.form-control {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+}
+
+input.form-control:focus {
+  border-color: #00aaff;
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.3);
+  outline: none;
+}
+
+/* Submit button styling */
+button[type="submit"], .submit-button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #00aaff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+button[type="submit"]:hover:not(:disabled), .submit-button:hover:not(:disabled) {
+  background-color: #008ecc;
+  transform: translateY(-3px);
+}
+
+button[type="submit"]:disabled, .submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Input error state */
+input.ng-invalid.ng-touched {
+  border-color: #ff5b5b;
+}
+
+/* Link styling */
+a.btn-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #00aaff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a.btn-link:hover {
+  color: #008ecc;
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+  .register-form-container {
+    padding: 20px;
+  }
+
+  input.form-control, button[type="submit"], .submit-button {
+    font-size: 14px;
+  }
+}

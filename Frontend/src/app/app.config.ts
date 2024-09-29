@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideToastr } from 'ngx-toastr';
 import { AuthService } from './services/auth.service';
 
 
@@ -11,7 +12,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),  // Provide HttpClient with Fetch support
     provideRouter(routes),           // Provide routing
     provideClientHydration(),        // For SSR hydration
-    provideZoneChangeDetection(),    // Enable zone change detection
+    provideZoneChangeDetection(),
+    provideToastr({positionClass: 'toast-bottom-right'}),  // Enable zone change detection
     { provide: AuthService, useClass: AuthService }  // Provide the AuthService
   ]
 };

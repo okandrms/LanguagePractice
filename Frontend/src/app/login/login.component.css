@@ -1,105 +1,111 @@
-/* Reset basic styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff5b5b;
 }
 
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Container for the form */
-.container {
-  background-color: #fff;
-  padding: 20px;
+/* Form container */
+.login-form-container {
   max-width: 400px;
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Daha belirgin gölge efekti */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Form headings */
-h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  text-align: center;
-  color: #333;
+.login-form-container:hover {
+  transform: translateY(-5px); /* Hover ile hafif yukarı kaldırma efekti */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Form styling */
+/* Form group styling */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 25px; /* Form elemanları arasında daha fazla boşluk */
 }
 
-.form-group label {
+/* Label styling */
+label {
   display: block;
   margin-bottom: 8px;
-  font-size: 14px;
-  color: #333;
+  font-weight: 600;
+  font-size: 15px;
+  color: #555; /* Daha açık bir gri ton */
 }
 
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-  border-color: #007bff;
-}
-
-/* Button styling */
-button[type="submit"] {
+/* Input styling */
+input.form-control {
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Köşeleri daha fazla yuvarla */
+  background-color: #f9f9f9; /* Hafif gri arka plan */
+  transition: all 0.3s ease-in-out;
+}
+
+input.form-control:focus {
+  border-color: #00aaff; /* Fokuslandığında açık mavi kenar rengi */
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.3); /* Hafif bir mavi dış gölge */
+  outline: none;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #00aaff;
+  color: white;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase; /* Düğme metnini büyük harfe çevir */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
 }
 
-button[type="submit"]:hover {
-  background-color: #0056b3;
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #008ecc; /* Hover durumunda daha koyu mavi */
+  transform: translateY(-3px); /* Hafif yukarı kaldırma efekti */
 }
 
-button[disabled] {
+button[type="submit"]:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
 
+/* Input error state */
+input.ng-invalid.ng-touched {
+  border-color: #ff5b5b; /* Kırmızı kenar rengi */
+}
+
 /* Link styling */
 a.btn-link {
-  display: block;
-  margin-top: 15px;
-  color: #007bff;
+  display: inline-block;
+  margin-top: 20px;
+  color: #00aaff;
   text-align: center;
-  text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 a.btn-link:hover {
+  color: #008ecc;
   text-decoration: underline;
 }
 
-/* Responsive styling */
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-    max-width: 90%;
+/* Responsive design */
+@media (max-width: 576px) {
+  .login-form-container {
+    padding: 20px;
+  }
+
+  input.form-control, button[type="submit"] {
+    font-size: 14px;
   }
 }

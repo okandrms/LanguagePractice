@@ -1,3 +1,7 @@
+<div class="col col-md-6 flex">
+  <h1>Create New Account</h1>
+  <hr>
+
 <form [formGroup]="registerForm" (ngSubmit)="submitForm()" class="register-form-container">
   <div class="form-group">
     <label for="name">Name</label>
@@ -21,3 +25,5 @@
 
   <button type="submit" [disabled]="registerForm.invalid" class="submit-button">Register</button>
 </form>
+
+</div>
