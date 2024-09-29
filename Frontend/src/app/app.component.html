@@ -1,10 +1,5 @@
 
-<app-login *ngIf="!isLoggedIn"></app-login>
 
 <!-- Kullanıcı giriş yaptıysa yönlendirme yapılacak -->
 <router-outlet *ngIf="isLoggedIn"></router-outlet>
 
-<h1>{{ title }}</h1>
-
-<!-- WordFormComponent sadece giriş yapıldıysa gösterilsin -->
-<app-wordform *ngIf="isLoggedIn"></app-wordform>
