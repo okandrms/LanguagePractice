@@ -3,25 +3,4 @@
 @import 'ngx-toastr/toastr';
 
 
-/* styles.css veya register.component.css dosyanıza ekleyin */
-.toast-success {
-  background-color: #28a745; /* Başarı yeşili */
-}
 
-.toast-error {
-  background-color: #dc3545; /* Hata kırmızı */
-}
-
-.toast-warning {
-  background-color: #ffc107; /* Uyarı sarı */
-}
-
-.toast-info {
-  background-color: #17a2b8; /* Bilgi mavi */
-}
-
-.toast {
-  font-size: 16px; /* Yazı boyutu */
-  border-radius: 8px; /* Kenar yuvarlama */
-  color: white; /* Yazı rengi */
-}

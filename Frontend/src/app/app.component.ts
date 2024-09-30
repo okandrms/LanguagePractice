@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { WordFormComponent } from './wordform/wordform.component';
 import { RegisterComponent } from "./register/register.component";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent {
   title = 'LanguagePractice';
   isLoggedIn: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private toastr: ToastrService) {}
 
   ngOnInit() {
     // Check user login status from AuthService
