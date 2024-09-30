@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideToastr } from 'ngx-toastr';
 import { AuthService } from './services/auth.service';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 export const appConfig: ApplicationConfig = {
@@ -14,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),        // For SSR hydration
     provideZoneChangeDetection(),
     provideToastr({positionClass: 'toast-bottom-right'}),  // Enable zone change detection
+    provideAnimations(),
     { provide: AuthService, useClass: AuthService }  // Provide the AuthService
   ]
 };

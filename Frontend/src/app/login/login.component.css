@@ -4,7 +4,6 @@ h1 {
   color: #ff5b5b;
 }
 
-/* Form container */
 .login-form-container {
   max-width: 400px;
   width: 100%;
@@ -12,47 +11,43 @@ h1 {
   padding: 30px;
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Daha belirgin gölge efekti */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login-form-container:hover {
-  transform: translateY(-5px); /* Hover ile hafif yukarı kaldırma efekti */
+  transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Form group styling */
 .form-group {
-  margin-bottom: 25px; /* Form elemanları arasında daha fazla boşluk */
+  margin-bottom: 25px;
 }
 
-/* Label styling */
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
   font-size: 15px;
-  color: #555; /* Daha açık bir gri ton */
+  color: #555;
 }
 
-/* Input styling */
 input.form-control {
   width: 100%;
   padding: 12px;
   font-size: 15px;
   border: 1px solid #ddd;
-  border-radius: 8px; /* Köşeleri daha fazla yuvarla */
-  background-color: #f9f9f9; /* Hafif gri arka plan */
+  border-radius: 8px;
+  background-color: #f9f9f9;
   transition: all 0.3s ease-in-out;
 }
 
 input.form-control:focus {
-  border-color: #00aaff; /* Fokuslandığında açık mavi kenar rengi */
-  box-shadow: 0 0 5px rgba(0, 170, 255, 0.3); /* Hafif bir mavi dış gölge */
+  border-color: #00aaff;
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.3);
   outline: none;
 }
 
-/* Submit button styling */
 button[type="submit"] {
   width: 100%;
   padding: 12px 0;
@@ -60,7 +55,7 @@ button[type="submit"] {
   color: white;
   font-size: 16px;
   font-weight: 600;
-  text-transform: uppercase; /* Düğme metnini büyük harfe çevir */
+  text-transform: uppercase;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -68,8 +63,8 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover:not(:disabled) {
-  background-color: #008ecc; /* Hover durumunda daha koyu mavi */
-  transform: translateY(-3px); /* Hafif yukarı kaldırma efekti */
+  background-color: #008ecc;
+  transform: translateY(-3px);
 }
 
 button[type="submit"]:disabled {
@@ -77,12 +72,10 @@ button[type="submit"]:disabled {
   cursor: not-allowed;
 }
 
-/* Input error state */
 input.ng-invalid.ng-touched {
-  border-color: #ff5b5b; /* Kırmızı kenar rengi */
+  border-color: #ff5b5b;
 }
 
-/* Link styling */
 a.btn-link {
   display: inline-block;
   margin-top: 20px;
@@ -99,7 +92,6 @@ a.btn-link:hover {
   text-decoration: underline;
 }
 
-/* Responsive design */
 @media (max-width: 576px) {
   .login-form-container {
     padding: 20px;
