@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ CommonModule, RouterOutlet,LoginComponent, WordFormComponent, RegisterComponent],
+  imports: [CommonModule, RouterOutlet, LoginComponent, WordFormComponent, RegisterComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

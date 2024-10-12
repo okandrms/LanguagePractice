@@ -1,5 +1,10 @@
+<app-navbar></app-navbar>
 
+<!-- Sayfa başlığı -->
+<h1 class="text-center mt-4">Welcome to {{title}}</h1> <!-- Title added here -->
+
+<!-- Kullanıcı giriş yapmadıysa login sayfası başlatılacak -->
+<app-login *ngIf="!isLoggedIn"></app-login>
 
 <!-- Kullanıcı giriş yaptıysa yönlendirme yapılacak -->
 <router-outlet *ngIf="isLoggedIn"></router-outlet>
-

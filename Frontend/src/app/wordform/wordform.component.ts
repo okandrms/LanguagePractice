@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule for forms
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { WordService } from '../services/word.service';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-wordform',
   standalone: true,  // Standalone component
   templateUrl: './wordform.component.html', // Link to your HTML template
   styleUrls: ['./wordform.component.scss'], // Link to your styles
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule]  // Import HttpClientModule here
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, NavbarComponent] // Import HttpClientModule here
+  // Import HttpClientModule here
 })
 export class WordFormComponent {
   wordForm: FormGroup;
@@ -32,8 +34,11 @@ export class WordFormComponent {
         },
         (error: any) => {
           console.error('Error adding word', error);
+          console.error('Error status:', error.status); // Log error status
+          console.error('Error message:', error.message); // Log error message
         }
       );
     }
   }
+
 }
