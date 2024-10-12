@@ -31,8 +31,13 @@ export class AuthService {
 
 
   logout(): Observable<any> {
-    return this.http.post(`${this.baseApiUrl}/logout`, {});
+    return this.http.post(`${this.baseApiUrl}/logout`, {}, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      })
+    });
   }
+
 
   isLoggedIn(): boolean {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {

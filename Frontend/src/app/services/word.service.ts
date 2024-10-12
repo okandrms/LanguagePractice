@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WordService {
-  private apiUrl = 'http://localhost:8000/api/words'; // Your API URL
+  private apiUrl = 'http://localhost:8000/api'; // Your API URL
 
   constructor(private http: HttpClient) {}
 
   // Create (POST)
-  addWord(word: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, word);
+  addWord(wordData: any): Observable<any> {
+    const token = localStorage.getItem('token'); // Adjust according to your storage method
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`, // Set the authorization header
+      'Content-Type': 'application/json' // Ensure the correct content type
+    });
+
+    return this.http.post(`${this.apiUrl}/words`, wordData, { headers }); // Send request with headers
   }
 
   // Read (GET)
