@@ -54,11 +54,13 @@ class AuthController extends Controller
             return response()->json([
                 'message' => 'Login successful!',
                 'token' => $token,
+                'user' => $user
             ]);
         }
 
         return response()->json(['message' => 'Unauthorized'], 401);
     }
+
 
     // Logout a user
     public function logout(Request $request)

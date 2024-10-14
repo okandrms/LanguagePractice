@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -26,22 +25,25 @@ export class LoginComponent {
       password: ['', Validators.required],
     });
   }
-
   submitForm() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(
         (response: any) => {
-          localStorage.setItem('token', response.token); // Store the token in local storage
-          this.toastr.success('Login successful! Redirecting to words page.', 'Success'); // Show success message
-          this.router.navigate(['/words']); // Navigate to the words page
+          console.log(response); // Yanıtı kontrol et
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('user', JSON.stringify(response.user));
+          this.toastr.success('Login successful! Redirecting to words page.', 'Success');
+          this.router.navigate(['/words']);
         },
         (error: any) => {
           console.error('Login failed', error);
-          this.toastr.error('Login failed. Please check your credentials.', 'Error'); // Show error message
+          this.toastr.error('Login failed. Please check your credentials.', 'Error');
         }
       );
     } else {
-      this.toastr.warning('Please fill out all required fields.', 'Warning'); // Show warning if form is invalid
+      this.toastr.warning('Please fill out all required fields.', 'Warning');
     }
   }
+
+
 }

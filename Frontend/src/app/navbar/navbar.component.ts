@@ -12,25 +12,32 @@ import { ToastrService } from 'ngx-toastr';
   imports: [CommonModule, RouterModule]
 })
 export class NavbarComponent {
-  constructor(private authService: AuthService, private router: Router, private toastr: ToastrService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
 
+  getUserName(): string {
+    return this.authService.getUserName(); // Kullanıcı adını al
+  }
+
   isLoginOrRegisterPage(): boolean {
     const currentRoute = this.router.url;
-    return currentRoute === '/login' || currentRoute === '/register'; // Adjust as necessary based on your routing configuration
+    return currentRoute === '/login' || currentRoute === '/register';
   }
 
   logout() {
-    const user = localStorage.getItem('token');
-
-    if (user) {
+    if (this.isLoggedIn()) {
       this.authService.logout().subscribe(
         () => {
           this.toastr.success('Logged out successfully', 'Logout Successful');
           localStorage.removeItem('token');
+          localStorage.removeItem('user'); // Kullanıcı bilgilerini de sil
           this.router.navigate(['/login']);
         },
         (error: any) => {
